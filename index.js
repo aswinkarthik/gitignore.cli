@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-const request = require('request'),
-      axios = require('axios'),
+const axios = require('axios'),
       fs = require('fs')
 
 const targetFile = 'gitignore.cli'
