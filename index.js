@@ -4,7 +4,7 @@ const request = require('request'),
       axios = require('axios'),
       fs = require('fs')
 
-
+const targetFile = 'gitignore.cli'
 const baseUrl = 'https://www.gitignore.io/api/'
 const listUrl = `${baseUrl}list`
 
@@ -48,11 +48,11 @@ axios
   .then(() => {
     const apiStacks = encodeURIComponent(cliArgsToCheck.join())
     return axios.get(baseUrl + apiStacks)
-                .then(res => fs.writeFile('gitignore.io', res.data, err => console.log(err)))
+                .then(res => fs.writeFile(targetFile, res.data, err => console.log(err)))
                 .catch(err => console.log(err))
   })
   .then(() => {
-    console.log('Generated ./gitignore.io file')
+    console.log(`Generated ./${targetFile} file`)
   })
   .catch(err => console.log(err))
 
