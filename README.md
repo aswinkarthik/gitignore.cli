@@ -1,7 +1,7 @@
 # Gitignore.io
 
 - A command line tool for creating .gitignore files.
-- Uses [http://gitignore.io/api](gitignore.io) API
+- Uses [gitignore.io](http://gitignore.io) API
 
 ## Usage
 
