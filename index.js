@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const request = require('request'),
       axios = require('axios'),
       fs = require('fs')
@@ -14,6 +16,8 @@ cliArgs.shift()
 cliArgsToCheck = cliArgs.map(val => val.trim().toLowerCase())
 
 if(cliArgsToCheck == null || cliArgsToCheck.length == 0) {
+  console.log('Usage: \n')
+  console.log('gitignore $STACK1 [$STACK2 $STACK3...]\n')
   console.log('Please pass atleast 1 argument')
   process.exit(1)
 }

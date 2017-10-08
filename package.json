@@ -4,12 +4,14 @@
   "description": "A CLI tool for generating gitignore files",
   "main": "index.js",
   "author": "Aswin Karthik S",
-  "license": "MIT",
+  "license": "WTFPL",
+  "bin": {
+    "gitignore": "./index.js"
+  },
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "axios": "^0.16.2",
-    "request": "^2.83.0"
+    "axios": "^0.16.2"
   }
 }
