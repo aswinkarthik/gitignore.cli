@@ -1,0 +1,15 @@
+{
+  "name": "gitignore.cli",
+  "version": "1.0.0",
+  "description": "A CLI tool for generating gitignore files",
+  "main": "index.js",
+  "author": "Aswin Karthik S",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "request": "^2.83.0"
+  }
+}
