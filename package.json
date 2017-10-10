@@ -6,13 +6,14 @@
   "author": "Aswin Karthik S",
   "license": "WTFPL",
   "bin": {
-    "gitignore": "./index.js"
+    "gitignore": "./src/index.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./src/index.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "chalk": "^2.1.0",
     "commander": "^2.11.0"
   }
 }
