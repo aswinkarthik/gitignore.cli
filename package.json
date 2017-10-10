@@ -12,6 +12,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "commander": "^2.11.0"
   }
 }
