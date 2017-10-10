@@ -34,7 +34,8 @@ const setOutputFilename = (filename) => {
 }
 
 const checkIfValid = (options) => {
-  return getSupportedListAndDo(supportedStacks => {
+  return getSupportedListAndDo()
+  .then(supportedStacks => {
     let notSupportedStacks = []
     options.forEach(e => {
       if(!supportedStacks.includes(e)) {
@@ -42,9 +43,8 @@ const checkIfValid = (options) => {
       }
     })
     if(notSupportedStacks.length > 0) {
-      log(chalk.red('The following stacks are not supported: \n'))
-      log(notSupportedStacks)
-      process.exit(1)
+      log(chalk.red('The following stacks are not supported:'))
+      log(notSupportedStacks.join() + '\n')
     }
   })
 }
