@@ -1,6 +1,6 @@
 {
   "name": "gitignore.cli",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A CLI tool for generating gitignore files",
   "main": "index.js",
   "author": "Aswin Karthik S",
@@ -10,12 +10,14 @@
     "url": "https://github.com/aswinkarthik93/gitignore.cli"
   },
   "bin": {
-    "gitignore": "./index.js"
+    "gitignore": "./src/index.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./src/index.js"
   },
   "dependencies": {
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0"
   }
 }
