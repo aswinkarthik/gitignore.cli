@@ -56,7 +56,7 @@ const generate = (options, outputfile) => {
   }
   const targetFile = outputfile || defaultTargetFile
   checkIfValid(options)
-    .then((options) => {
+    .then(() => {
       log(chalk.green(`Generating ${targetFile}`))
       const apiStacks = encodeURIComponent(options.join())
       return axios.get(baseUrl + apiStacks)
@@ -70,10 +70,14 @@ const generate = (options, outputfile) => {
 
 const program = require('commander')
 program
-  .version('1.2.0')
+  .version(chalk.bold('1.2.0'))
   .option('-l, --list', 'List all available stacks', listOptions)
-  .option('-o, --outputfile [value]', `Default is ${defaultTargetFile}`)
+  .option('-o, --outputfile [value]', `Default is ${chalk.bold(defaultTargetFile)}`)
   .parse(process.argv)
+
+if (!process.argv.slice(2).length) {
+  program.outputHelp(chalk.white);
+}
 
 generate(program.args, program.outputfile)
 
