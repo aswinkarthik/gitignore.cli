@@ -1,4 +1,4 @@
-# Gitignore.io
+# Gitignore.cli
 
 - A command line tool for creating .gitignore files.
 - Uses [gitignore.io](http://gitignore.io) API
