@@ -98,7 +98,7 @@ const generate = (options, outputfile) => {
 
 const program = require('commander');
 program
-  .version(chalk.bold('1.2.0'))
+  .version(chalk.bold('1.3.0'))
   .option('-l, --list', 'List all available stacks', listOptions)
   .option('-o, --outputfile [value]', `Default is ${chalk.bold(defaultTargetFile)}`)
   .option('-s, --search <item>', 'Fuzzy search across various options', searchOptions)

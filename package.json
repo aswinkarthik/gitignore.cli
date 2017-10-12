@@ -1,6 +1,6 @@
 {
   "name": "gitignore.cli",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A CLI tool for generating gitignore files",
   "main": "index.js",
   "author": "Aswin Karthik S",
