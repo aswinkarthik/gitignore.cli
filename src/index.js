@@ -9,8 +9,6 @@ const chalk = require('chalk'),
 const baseUrl = 'https://www.gitignore.io/api/';
 const listUrl = `${baseUrl}list`;
 
-const defaultTargetFile = 'gitignore.cli';
-
 const logger = {
   info: msg => console.log(msg),
   success: msg => console.log(chalk.green(msg)),
@@ -57,11 +55,6 @@ const searchOptions = (item) => {
     });
 };
 
-const setOutputFilename = (filename) => {
-  selectedTargetFile = filename;
-  log(selectedTargetFile);
-};
-
 const checkIfValid = (options) => {
   return getList()
   .then(supportedStacks => {
@@ -78,29 +71,24 @@ const checkIfValid = (options) => {
   })
 };
 
-const generate = (options, outputfile) => {
+const generate = (options) => {
   if(program.args.length < 1) {
     return;
   }
-  const targetFile = outputfile || defaultTargetFile;
   checkIfValid(options)
     .then(() => {
-      log(chalk.green(`Generating ${targetFile}`));
       const apiStacks = encodeURIComponent(options.join());
       return axios.get(baseUrl + apiStacks);
     })
     .then(res => {
-      fs.writeFile(targetFile, res.data, err => {if(err) log(chalk.red(err))});
-      return targetFile;
+      process.stdout.write(res.data);
     })
-    .then((targetFile) => log(chalk.green(`Done`)))
 };
 
 const program = require('commander');
 program
-  .version(chalk.bold('1.3.0'))
+  .version(chalk.bold('1.4.0'))
   .option('-l, --list', 'List all available stacks', listOptions)
-  .option('-o, --outputfile [value]', `Default is ${chalk.bold(defaultTargetFile)}`)
   .option('-s, --search <item>', 'Fuzzy search across various options', searchOptions)
   .parse(process.argv);
 
@@ -108,4 +96,4 @@ if (!process.argv.slice(2).length) {
   program.outputHelp(chalk.white);
 }
 
-generate(program.args, program.outputfile);
+generate(program.args);
