@@ -87,7 +87,7 @@ const generate = (options) => {
 
 const program = require('commander');
 program
-  .version(chalk.bold('1.4.0'))
+  .version(chalk.bold('1.4.2'))
   .option('-l, --list', 'List all available stacks', listOptions)
   .option('-s, --search <item>', 'Fuzzy search across various options', searchOptions)
   .parse(process.argv);
