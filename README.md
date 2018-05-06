@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/dm/gitignore.cli.svg?style=for-the-badge)
+
 # Gitignore.cli
 
 - A command line tool for creating .gitignore files.
