@@ -3,7 +3,6 @@
 const chalk = require('chalk'),
       log = console.log,
       axios = require('axios'),
-      fs = require('fs'),
       Fuse = require('fuse.js');
 
 const baseUrl = 'https://www.gitignore.io/api/';
